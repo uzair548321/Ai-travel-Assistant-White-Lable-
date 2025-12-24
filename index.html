@@ -4,34 +4,126 @@
   <meta charset="UTF-8" />
   <title>White-Label Travel AI Assistant</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f6f9;
+      color: #1f2937;
+    }
+
+    .hero {
+      background: #0b2545;
+      color: white;
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: 32px;
+    }
+
+    .hero p {
+      margin-top: 10px;
+      font-size: 16px;
+      opacity: 0.9;
+    }
+
+    .features {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      font-size: 18px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #4b5563;
+    }
+
+    .bot-section {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .bot-container {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      padding: 10px;
+      min-height: 500px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 13px;
+      color: #6b7280;
+    }
+  </style>
 </head>
-<body style="font-family: Arial, sans-serif; max-width: 900px; margin: auto; padding: 20px;">
 
-  <h1>White-Label Travel AI Assistant ✈️</h1>
+<body>
 
-  <p>
-    A smart AI-powered travel assistant designed for travel agencies to
-    automate customer conversations, capture qualified leads, and assist
-    travelers 24×7.
-  </p>
+  <!-- HERO -->
+  <div class="hero">
+    <h1>White-Label Travel AI Assistant ✈️</h1>
+    <p>24×7 AI-powered travel assistant for modern travel agencies</p>
+  </div>
 
-  <ul>
-    <li>24×7 automated customer support</li>
-    <li>Instant trip planning assistance</li>
-    <li>Captures destination, dates, and budget</li>
-    <li>Stores enquiries directly in Google Sheets</li>
-    <li>Fully white-label and agency branded</li>
-  </ul>
+  <!-- FEATURES -->
+  <div class="features">
+    <div class="card">
+      <h3>Instant Customer Replies</h3>
+      <p>Handles travel enquiries automatically without human intervention.</p>
+    </div>
 
-  <p><strong>Try the live demo below:</strong></p>
+    <div class="card">
+      <h3>Lead Capture</h3>
+      <p>Collects name, phone number, email, destination, and budget.</p>
+    </div>
 
-  <!-- Botpress Webchat -->
+    <div class="card">
+      <h3>24×7 Availability</h3>
+      <p>Never miss a customer, even outside business hours.</p>
+    </div>
+  </div>
+
+  <!-- CHATBOT -->
+  <div class="bot-section">
+    <div class="bot-container" id="botpress-chat"></div>
+  </div>
+
+  <!-- BOTPRESS -->
   <script src="https://cdn.botpress.cloud/webchat/v3.5/inject.js"></script>
   <script>
     window.botpressWebChat.init({
+      container: "#botpress-chat",
       configUrl: "https://files.bpcontent.cloud/2025/12/15/13/20251215130239-JB7B35IO.json"
     });
   </script>
 
+  <footer>
+    © White-Label Travel AI Assistant — Agency Ready
+  </footer>
+
 </body>
 </html>
+
